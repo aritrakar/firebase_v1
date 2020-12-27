@@ -1,32 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-</head>
-<body>
-    <h1>Test</h1>
-    <script src="script.js"></script>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
+        <title>Home</title>
+    </head>
+    <body>
+        <h1>Cloud Cafe</h1>
 
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+        <div id="content">
+            <form id="add-cafe-form">
+                <input type="text" name="name" placeholder="Cafe name">
+                <input type="text" name="city" placeholder="Cafe city">
+                <button>Add cafe</button>
+            </form>
+            <ul id="cafe-list"></ul>
+        </div>
+        
 
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-        https://firebase.google.com/docs/web/setup#available-libraries -->
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        
 
-    <script>
-    // Your web app's Firebase configuration
-    var firebaseConfig = {
-        apiKey: "AIzaSyCOXDX7IO3ohZzCEcpV8exWlzR4lvUYIEc",
-        authDomain: "fir-7e135.firebaseapp.com",
-        projectId: "fir-7e135",
-        storageBucket: "fir-7e135.appspot.com",
-        messagingSenderId: "362137228534",
-        appId: "1:362137228534:web:2bf19901c395af51dc88d7"
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    </script>
-</body>
+        <script>
+            // Your web app's Firebase configuration
+            //const firebase = require('firebase')
+            var firebaseConfig = {
+                apiKey: "AIzaSyCqFRRYzGu2f3wmKOMrERSItueiRhmagR0",
+                authDomain: "fir-v1-53117.firebaseapp.com",
+                projectId: "fir-v1-53117",
+                storageBucket: "fir-v1-53117.appspot.com",
+                messagingSenderId: "544479662567",
+                appId: "1:544479662567:web:b2a06b339a4140f789ad42"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+            const db = firebase.firestore()
+            db.settings({timestampsInSnapshots: true});
+        </script>
+
+        <script src="app.js"></script>
+    </body>
 </html>
